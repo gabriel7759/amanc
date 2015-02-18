@@ -1169,6 +1169,14 @@ div.message.error ul {
 	background: url(../img/backend/delete.png) no-repeat;
 	margin: 30px 3px 0 12px;
 }
+.form .field label a.delet {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	text-indent: -5000px;
+	background: url(../img/backend/delete.png) no-repeat;
+	margin: 30px 3px 0 12px;
+}
 
 .form .field .list .option:hover {
 	background: #fff;
