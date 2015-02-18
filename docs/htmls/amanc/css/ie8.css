@@ -1,0 +1,437 @@
+/* Fix ie */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display: block; }
+
+/*//////////////
+
+   BODY/HTML
+
+///////////////////*/
+html,
+body {font-size: 14px;line-height: 20px;
+}
+
+h1,  h2  {font-size: 35px;line-height: 42px;margin-bottom: 30px;}
+h3, h4, h5, h6 {font-size: 25px;line-height: 30px; margin-bottom: 20px;}
+a:hover {color: #189494;}
+
+/*//////////////
+
+   HEADER 
+
+///////////////////*/
+
+/*------ Menu -------*/
+#menu { width: 1100px;display: block !important; }
+#menu>ul { border-bottom:  1px solid #272B31;}
+#menu>ul>li {  width: 16.58%;  border-right: 1px solid #272B31;}
+#menu>ul>li>a {  line-height: 58px; font-size: 14px;  height: 58px; }
+#menu>ul>li:hover { background: #37BCAB;}
+#menu ul li img { width: 100%;}
+#menu>ul>li.active-button { background: #37BCAB;}
+/* second level */
+#menu>ul>li>ul { position: absolute; left: 0; top: 58px; width: 100%;}
+#menu>ul>li>ul>li:hover {background: #2F353B;}
+#menu>ul>li>ul>li a {  font-size: 12px;padding: 10px 0;}
+
+
+/* third level  */
+#menu>ul>li>ul>li>ul { position: absolute; left: 182px; top: 0; width: 100%;}
+#menu>ul>li>ul>li>ul>li:hover {background: #189494;}
+#menu>ul>li>ul>li>ul>li a { font-size: 12px;  padding: 10px 0;}
+
+
+/* control mobile */
+.mobile { display: none;}
+
+/*//////////////
+
+   CONTENT
+
+///////////////////*/
+#content{ height:auto;width:100%;}
+
+
+/*---- Banner -----*/
+.banner { height: auto; background: url(../img/back/banner.jpg) center center fixed no-repeat; background-size: cover;}
+.banner .inner-block { padding-top: 100px;}
+.banner .inner-block+.inner-block { padding-top:0; padding-bottom: 50px;}
+/* image banner */
+.image-banner { width: 540px; text-align:center;}
+.image-banner img { height: 500px;}
+
+/* txt banner */
+.txt-banner { width: 540px; margin-top: 168px;}
+.txt-banner h1 { font-size: 50px;line-height: 46px; margin-bottom: 10px;}
+.txt-banner h2 {font-size: 35px;line-height: 42px;margin-bottom: 23px; }
+.txt-banner p {font-size: 18px;line-height: 20px;margin-bottom: 40px;}
+
+
+/* txt-btn */
+.txt-btn {font-size: 18px;line-height: 69px;padding: 0 32px;max-width: 160px;}
+.txt-btn:hover { background: #189494; color:#fff;}
+
+/*------- Inner block ---------*/
+.inner-block { width: 1100px; }
+
+
+/*----- Feature row ------*/
+.feature-row ul li { width: 32%; padding: 8% 0; margin-right: 2%;}
+.feature-row i { width: 87px; height: 87px;  font-size: 40px;  line-height: 87px; }
+.feature-row a:hover {color: #189494;}
+
+
+
+/* span feature */
+.span-feature { width: 67%; margin-left: 5%; margin-top: 0px; height: 120px;}
+.span-feature h1, .span-feature h2, .span-feature h3, .span-feature h2, .span-feature h4 {font-size: 23px;line-height: 28px;margin-bottom: 5px; }
+.span-feature p {font-size: 15px;line-height: 19px;}
+
+
+/* bottom feature */
+.bottom-feature {  margin-top: 20px;}
+.bottom-feature p { font-size: 14px; line-height: 20px;}
+
+
+/*----- Main row ------*/
+.main-row { padding: 4% 0 2% 0 ;  }
+.main-row ul li {  width: 23.5%; padding: 3% 0; margin-right: 2%;}
+.main-row i { width:70px; height:70px;  font-size: 40px;  line-height: 70px; }
+.main-row a:hover {color: #189494;}
+
+
+/* span feature */
+.span-main { width: 67%; margin-left: 5%; margin-top: 0px; height: 70px;}
+.span-main h2, .span-main h1, .span-main h3, .span-main h2, .span-main h4 {font-size: 17px;line-height: 20px;margin-bottom: 5px; }
+.span-main p {font-size: 14px;line-height: 17px;}
+
+
+/* bottom feature */
+.bottom-main {margin-top: 20px;}
+.bottom-main p { font-size: 14px; line-height: 20px; }
+
+
+/*------- out row ---------*/
+.out-row {  padding: 4% 0 2% 0;}
+
+
+/* txt out */
+.txt-out {  width: 46%;   padding-right: 4%;}
+.txt-out h3, .txt-out h2, .txt-out h1 {font-size: 36px;line-height: 54px;margin-bottom: 20px;} 
+.txt-out h4, .txt-out h5 {font-size: 22px;line-height: 27px; margin-bottom: 20px;}
+
+
+/* slider */
+.slider { width: 50%;}
+
+/* title slider */
+.title-slide { margin-bottom: 34px;}
+.title-slide h1, .title-slide h2, .title-slide h3, .title-slide h4 {font-size: 35px;line-height: 42px; margin: 5px 0;}
+
+
+/* slider out */
+#slider-out { height:257px;}
+
+/***************
+*
+*  1. Arrows
+*
+****************/
+
+.rsMinW .rsArrow {
+	height: 35px;
+	width: 17px;
+    top: -70px;
+}
+.rsMinW .rsArrow i { font-size: 28px; line-height: 35px;}
+.rsMinW .rsArrow i:hover { color:#37BCAB ;}
+.rsMinW .rsArrowLeft { right: 30px; }
+.rsMinW .rsArrowRight { right: 0; }
+
+
+/*----- Test -----*/
+.test { width: 48%; margin-right: 1%;}
+.test+.test { margin-left: 1%;}
+
+/* top test */
+.top-test {  margin-bottom: 14px;}
+
+
+/* image test */
+.image-test { width: 28%; }
+.image-test img { width: 100%;}
+
+
+/* title test */
+.title-test {  width: 65%; margin-left: 7%;}
+.title-test h1, .title-test h2, .title-test h3, .title-test h4 { font-size: 18px; line-height: 19px;}
+
+
+/*---- Banner small -----*/
+.banner-small { height: 300px;background: url(../img/back/banner.jpg) center center fixed no-repeat; background-size: cover;}
+
+
+/* txt banner small */
+.txt-banner-small {  padding-top: 150px;width: 100%;}
+.txt-banner-small h1 {font-size: 50px;line-height: 46px;margin-bottom: 10px;}
+.txt-banner-small p {font-size: 18px;line-height: 20px;margin-bottom: 40px;}
+
+
+/* map */
+.map { padding: 4% 0;width: 100%;}
+.map h1, .map h2, .map h3, .map h4 {font-size: 35px;line-height: 42px;margin-bottom: 30px;}
+
+
+/* map site */
+#map-site { height: 358px;}
+
+/*---- Info contact -----*/
+.info-contact {width: 100%; padding: 2% 0;}
+.info-contact ul li { width: 33.2%;}
+.info-contact ul li h1, .info-contact ul li h2, .info-contact ul li h3, .info-contact ul li h4 {font-size: 35px;line-height: 42px;margin-bottom: 30px;}
+.info-contact i { font-size: 15px; margin-right: 10px;}
+.info-contact p { margin-bottom: 10px;}
+.info-contact  a:hover { color: #189494;}
+
+
+/* info form */
+.info-form { width: 100%; padding: 2% 0;}
+.info-form h1, .info-form h2, .info-form h3, .info-form h4 {font-size: 35px;line-height: 42px;margin-bottom: 30px;}
+.info-form p { margin-bottom: 10px;}
+
+/* form contact */
+#contact-form {  margin-top: 50px;}
+input, textarea {
+    padding: 4px 2%;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 24px;
+}
+#contact-form textarea {height: 149px;width: 95.5%;}
+
+/* section  1 */
+.section1 { width: 100%; margin-bottom: 10px; }
+.section1 input {height: 24px; width: 27.5%; margin-right: 2%;}
+
+/* section 2 */
+.section2 {margin-bottom: 10px;}
+.section2 label{ margin-right: 10px; }
+.section2 span { margin-right: 10px;line-height: 30px;}
+button { 
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 24px;
+}
+ button:hover {color: #189494;}
+
+
+/*------- Options content ------*/
+
+/* content medium */
+.content-medium { width: 60%;}
+
+/*:: 1 ::*/
+.option1 { padding: 4% 0; width: 100%; }
+
+
+/* content option */
+.content-option1 img { width: 40%;}
+
+
+/* txt option 1 */
+.txt-option1 {  width: 55%; margin-left: 5%;}
+
+/*---- Option left ----*/
+.option-left {  width: 35%; margin-left: 5%;}
+
+
+
+/*::: 2 :::*/
+.option2 { padding: 4% 0;width: 100%; }
+.option2 h3, .option h4 {margin-bottom: 20px;}
+
+/* list content */
+.list-content li { padding: 3% 0;}
+
+/* number list */
+.number-list { font-size: 30px;  width: 11%;}
+
+/* txt list */
+.txt-list {  width: 89%;}
+
+
+/* SIngle row */
+.single-row { padding: 4% 0;}
+.single-row img { margin: 2% 0;}
+
+/*::: 3 :::: */
+.option3 li { width: 40%; padding: 5%; }
+
+/* linkt history */
+.link-large { font-size: 20px;}
+
+
+
+/*:::: 4 ::::*/
+.option4 { width: 100%;}
+.option4 li{ width: 40%; padding: 5%; }
+
+/* photo */
+.photo {width: 168px; height: 200px; }
+.photo span {text-align: center; position: absolute; left: 0; top: 0; height: 100%; width: 100%; background: rgba(0,0,0,.5);
+        -webkit-transform:scale(0);-moz-transform:scale(0);-o-transform:scale(0);transform:scale(0);}
+.photo span i {  color: #37BCAB; line-height: 200px; font-size: 35px; }
+.photo:hover span{-webkit-transform:scale(1);-moz-transform:scale(1);-o-transform:scale(1);transform:scale(1);}
+
+/* txt option 4 */
+.txt-option4 { margin-left: 5%; width: 56%;}
+
+/* link xtra large */
+.link-large-x  { font-size: 25px;line-height: 30px; margin-bottom: 10px;}
+
+
+/*::: Aside 1 :::*/
+.aside1 { width: 100%; padding: 8% 0;}
+.aside1 ul li { margin: 2% 0;}
+.aside1 ul li i { font-size: 20px;  margin-right: 5px;}
+.aside1 ul li a {font-size: 16px;}
+.aside1 ul li a:hover {color:  #37BCAB;}
+
+/*:::: Aside 2 :::*/
+.aside2 { width: 100%;  padding: 8% 0;}
+.aside2 ul li { margin: 2% 0; }
+.aside2 ul li span { width:85px ; height:61px ; padding: 25px 0 15px 0;}
+.aside2 ul li h5 { font-size: 35px;  margin-bottom: 0px;}
+.aside2 ul li span p { font-size: 16px;}
+.aside2 ul li a:hover {color:  #37BCAB;}
+
+/* txt aside 2 */
+.txt-aside2 {  width: 72%; margin-left: 5%;}
+.txt-aside2 h3, .txt-aside2 h4, .txt-aside2 h5 { margin-bottom: 5px;}
+
+/* Aside 3 */
+.aside3 { width: 100%; padding: 8% 0;}
+
+
+/* Aside 4 */
+.aside4 { width: 100%;  padding: 8% 0;}
+.aside4 a {margin-bottom: 10px; }
+.aside4 a:hover {color:  #37BCAB;}
+
+/* Search */
+.login { width: 96%; }
+.login label input {  width: 20px;}
+
+
+/*------ Gallery -----*/
+#Container{ width: 100%; }
+#Container li {  width: 220px; height: 142px; }
+#Container span {text-align: center; position: absolute; left: 0; top: 0; height: 100%; width: 100%; background: rgba(0,0,0,.5);
+        -webkit-transform:scale(0);-moz-transform:scale(0);-o-transform:scale(0);transform:scale(0);}
+#Container span i {  color: #37BCAB; line-height: 142px; font-size: 35px; }
+#Container li a { display: block;}
+#Container li a:hover span{-webkit-transform:scale(1);-moz-transform:scale(1);-o-transform:scale(1);transform:scale(1);}
+
+
+/*--- Filter ----*/
+
+/* filter list */
+.filter-list {  padding: 4% 0 ; width: 100%;}
+.filter-list li {  font-size: 16px; margin-left: 10px;}
+.filter-list li:hover {color:  #37BCAB;}
+
+
+/*---- Slogan ----*/
+.slogan { width: 100%; padding: 2% 0;}
+
+/* image slogan */
+.image-slogan { width: 100px;}
+.image-slogan img { width: 100%;}
+
+
+/* txt slogan */
+.txt-slogan { margin-left:10px;}
+.txt-slogan h3, .txt-slogan h1, .txt-slogan h2 { font-size: 50px; line-height: 47px;}
+
+
+/*---- Search block ----*/
+.search-block { width: 100%;padding: 5% 0; margin-bottom: 50px;}
+.search-block form { width: 50%; padding: 0 25%;}
+.search-block input { width: 92%;}
+    
+
+
+
+/*--- List aside -----*/
+.list-aside { width: 20%; padding: 2% 0;}
+
+
+/*--- List menu .----*/
+.list-menu { margin-bottom: 20px; }
+.list-menu ul { margin: 9% 0;}
+.list-menu ul li { width: 96%;  margin: 2% 0;}
+.list-menu ul li a { padding: 5% 2%; }
+.list-menu ul li a:hover { background: #189494;}
+.list-menu ul li a i { right: 6%; top: 12px; font-size: 19px;}
+
+
+/*---- Other block -----*/
+.other-block {  margin-bottom: 20px;padding: 5% 0;}
+.other-block ul { margin: 9% 0;}
+.other-block ul li { width: 46%; margin-right: 3%; margin-bottom: 3%; height: 80px; }
+.other-block ul li:hover {border:1px solid #37BCAB;}
+.other-block ul li a { width: 100%;}
+.other-block ul li a:hover { opacity: .6;  }
+
+
+/*--- other block 2 -----*/
+.other-block-2 {  margin-bottom: 20px;padding: 5% 0;}
+.other-block-2 ul {margin: 10px 0;}
+.other-block-2 ul li { margin-left: 20px; margin-bottom: 5px;}
+
+
+/*--- List product----*/
+.list-product { width: 75%;  margin-left: 5%;}
+.list-product ul { width: 100%;  padding: 3% 0;}
+.list-product ul li {  width: 20%; margin-right: 4%;  margin-bottom: 4%;  height: 208px;}
+.list-product ul li:hover {border:2px solid #37BCAB; box-shadow: 0 10px 10px rgba(0,0,0,.5);}
+
+/* photo product */
+.photo-product { width: 100%; height: 130px;}
+
+
+/* info product */
+.description-product { padding: 3%;  width: 94%;}
+.description-product strong { font-size: 20px; }
+
+
+/*////////////////
+
+		PUSH
+
+///////////////////////*/
+.fix { height:170px;}
+	
+/*//////////////
+
+  FOOTER
+
+///////////////////*/
+footer {padding: 60px 0;}
+
+
+/* copy */
+.copy {width: 420px; height: 50px;}
+.copy p { line-height: 50px;}
+.copy a:hover {color: #37BCAB;}
+.copy ul {  margin-left: 10%; margin-top: 11px;}
+.copy ul li {  margin-right: 4px;}
+.copy ul li i { width: 30px; height: 30px;  line-height: 30px; font-size: 20px; }
+.copy ul li i:hover {background: #37BCAB;}
+
+
+/* icon device */
+.icon-device { float: right;}
+.icon-device li { margin-left: 30px}
+.icon-device li i { font-size: 50px;}
+.icon-device li i:hover { color: #6a717b;}
+

@@ -1,0 +1,25 @@
+CREATE TABLE IF NOT EXISTS `activity_popular` (
+`id` int(11) NOT NULL,
+  `activity_id` int(11) NOT NULL,
+  `total` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `activity_popular`
+--
+ALTER TABLE `activity_popular`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `activity_popular`
+--
+ALTER TABLE `activity_popular`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

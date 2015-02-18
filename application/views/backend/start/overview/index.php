@@ -1,0 +1,1 @@
+		<p><?=__('Welcome to the administration interface for')?> <strong><?=$sitename?></strong>.<!-- <br /><?=__('Puedes llamarnos al 0000.0000 o enviarnos un correo a')?> <a href="mailto:mail@domain.com">mail@domain.com</a>.--></p>
