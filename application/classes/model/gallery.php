@@ -19,6 +19,11 @@ class Model_Gallery extends Model {
 			$sql .= " AND gallery.status = :status";
 			$parameters[':status'] = $params['status'];
 		}
+		if (ctype_digit( (string) $params['content_id']))
+		{
+			$sql .= " AND gallery.content_id = :content_id";
+			$parameters[':content_id'] = $params['content_id'];
+		}
 		if (ctype_digit( (string) $params['limit']) AND ctype_digit( (string) $params['offset']))
 		{
 			$limit = "LIMIT :offset, :limit";
@@ -31,6 +36,7 @@ class Model_Gallery extends Model {
 					gallery.id, 
 					gallery.title, 
 					gallery.summary, 
+					gallery.content_id,
 					gallery.title as name, 
 					gallery.status, 
 					IF(gallery.status=0, 'inactive', '') AS mode
@@ -46,19 +52,19 @@ class Model_Gallery extends Model {
 			")
 			->parameters($parameters)
 			->execute();
-		if($params['id']>0){
+		/*if($params['id']>0){
 			$gallery= $data['gallery'] = DB::query(Database::SELECT, "
 									SELECT gallery_media.id, gallery_media.gallery_id,
 										gallery_media.title, gallery_media.summary, gallery_media.picture,
-									CONCAT('/assets/files/gallery/',gallery_id,'/',picture, '') as src_file,
-									CONCAT('/assets/files/gallery/',gallery_id,'/', picture) AS src_picture,
+									CONCAT('/assets/files/gallery/',picture, '') as src_file,
+									CONCAT('/assets/files/gallery/', picture) AS src_picture,
 									gallery_media.status, gallery_media.is_deleted, gallery_media.log_id
 									FROM gallery_media
 									WHERE  gallery_id = :gallery_id
 								")
 								->parameters(array(':gallery_id' => $params['id']))
 								->execute()->as_array();	
-	}
+	}*/
 		return $data;
 	}
 
@@ -72,6 +78,7 @@ class Model_Gallery extends Model {
 			$sql .= " AND gallery.id = :id";
 			$parameters[':id'] = $params['id'];
 		}
+		
 		
 		$data = DB::query(Database::SELECT, "
 				SELECT 
@@ -98,8 +105,8 @@ class Model_Gallery extends Model {
 			$gallery= $data['gallery'] = DB::query(Database::SELECT, "
 									SELECT gallery_media.id, gallery_media.gallery_id,
 										gallery_media.title, gallery_media.summary, gallery_media.picture,
-									CONCAT('/assets/files/gallery/',gallery_id,'/',picture, '') as src_file,
-									CONCAT('/assets/files/gallery/',gallery_id,'/', picture) AS src_picture,
+									CONCAT('/assets/files/gallery/',picture, '') as src_file,
+									CONCAT('/assets/files/gallery/', picture) AS src_picture,
 									gallery_media.status, gallery_media.is_deleted, gallery_media.log_id
 									FROM gallery_media
 									WHERE  gallery_id = :gallery_id
@@ -209,11 +216,8 @@ class Model_Gallery extends Model {
 					if(!file_exists("assets/files/gallery/")){
 						mkdir("assets/files/gallery/", 0777);
 					}
-					if(!file_exists("assets/files/gallery/".$gallery_id."/")){
-						mkdir("assets/files/gallery/".$gallery_id."/", 0777);
-					}
 				$source      = 'assets/files/tmp/'.$picture;
-				$destination = 'assets/files/gallery/'.$gallery_id.'/'.$picture;
+				$destination = 'assets/files/gallery/'.$picture;
 						//var_dump($source); exit;
 						if (file_exists($source) AND $picture !=''){
 							copy($source, $destination);

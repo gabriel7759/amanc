@@ -48,17 +48,17 @@ class Controller_Backend_Manage_gallery extends Controller_Backend_Template {
 		$parent_id = Arr::get($_GET, 'parent_id', 0);
 		$data = $this->model->fetch(array(
 			'id' => $id,
-		));
+		)); 
 		if(!file_exists('assets/files/tmp/')) mkdir('assets/files/tmp/', 0777);
 			if(count($_FILES['picture']['name'])>0){
 				for ($i=0; $i<count($_FILES['picture']['name'] ); $i++){
 					$source = $_FILES['picture']['tmp_name'][$i];           
 					$target = "assets/files/tmp/".$_FILES['picture']['name'][$i]; 
 					move_uploaded_file($source,$target);
-					$_POST['gallery-file'][$i]=$_FILES['picture']['name'][$i]; 
+					$_POST['gallery-file']=$_FILES['picture']['name']; 
 				}
 			}
-		
+		//var_dump($_POST); EXIT;
 		if ($_POST)
 		{	
 			
