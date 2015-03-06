@@ -82,6 +82,24 @@ class Controller_Frontend_Homepage extends Controller_Frontend_Template {
 		$data = Model::factory('Content')->fetchbyuri($section, $page, $subpage);
 		$this->template->title = " | ".$data['title'];
 		
+		$data['galleries'] = Model::factory('Gallery')->fetch_all(array(
+			//'limit'    => $this->items_per_page,
+			//'offset'   => $offset,
+			'order_by' => 'gallery.position',
+			'sort'     =>'ASC',
+			'status'   => 1,
+			'content_id' => 14,
+			//'text'     => $text,
+			//'id_medico' => $id_medico,
+		))->as_array(); 
+		$i=0;
+		foreach($data['galleries'] as $gallery){
+			$images=Model::factory('Gallery')->fetch_gallery($gallery['id']);
+			if($images['gallery_id']==$gallery_id['id'])
+				$data['galleries'][$i]['images']= $images;
+			$i++;
+		} 
+		//var_dump($data['galleries']); exit;
 		$view = View::factory('frontend/homepage/content')
 			->set('data', $data);
 		$this->template->content = $view;

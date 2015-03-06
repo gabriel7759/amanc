@@ -52,8 +52,9 @@ class Model_Gallery extends Model {
 			")
 			->parameters($parameters)
 			->execute();
-		/*if($params['id']>0){
-			$gallery= $data['gallery'] = DB::query(Database::SELECT, "
+			$x=0;
+		foreach($data as $value){
+			$data[$x]['gallery'] = $x; /* DB::query(Database::SELECT, "
 									SELECT gallery_media.id, gallery_media.gallery_id,
 										gallery_media.title, gallery_media.summary, gallery_media.picture,
 									CONCAT('/assets/files/gallery/',picture, '') as src_file,
@@ -62,12 +63,28 @@ class Model_Gallery extends Model {
 									FROM gallery_media
 									WHERE  gallery_id = :gallery_id
 								")
-								->parameters(array(':gallery_id' => $params['id']))
-								->execute()->as_array();	
-	}*/
+								->parameters(array(':gallery_id' => $value['id']))
+								->execute();	*/
+			$x++;
+		}
 		return $data;
 	}
-
+public function fetch_gallery($id)
+	{
+	
+		$query = DB::query(Database::SELECT, "
+									SELECT gallery_media.id, gallery_media.gallery_id,
+										gallery_media.title, gallery_media.summary, gallery_media.picture,
+									CONCAT('/assets/files/gallery/',picture, '') as src_file,
+									CONCAT('/assets/files/gallery/', picture) AS src_picture,
+									gallery_media.status, gallery_media.is_deleted, gallery_media.log_id
+									FROM gallery_media
+									WHERE  gallery_id = :gallery_id
+								")
+								->parameters(array(':gallery_id' => $id))
+								->execute()->as_array();
+		return $query;
+	}
 	public function fetch($params)
 	{
 		$sql = "";

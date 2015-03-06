@@ -33,7 +33,7 @@ class Controller_Backend_Manage_gallery extends Controller_Backend_Template {
 			'total_items'    => $this->template->content->data->found_rows(),
 			'items_per_page' => $this->items_per_page,
 		));
-		
+		//var_dump($this->template->content->data->as_array()); exit; 
 		$this->template->content->page       = $page;
 		$this->template->content->order_by   = $order_by;
 		$this->template->content->sort       = $sort;

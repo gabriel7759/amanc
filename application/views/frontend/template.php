@@ -30,6 +30,7 @@
             <link class="rs-file" href="css/royalslider.css" rel="stylesheet">
             <!-- slider stylesheets -->
             <link class="rs-file" href="css/rs-minimal-white.css" rel="stylesheet">
+			<link rel="stylesheet" href="css/swipebox.css">
     
          	<!-- ////////////////////////// BEGIN MEDIA QUIERIES ///////////////////////////// -->
                 <link rel="stylesheet" type="text/css" media="all and (max-width: 320px)" href="css/1_portrait.css" />
@@ -58,6 +59,7 @@
                 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
               
                <script class="rs-file" src="js/jquery.royalslider.min.js"></script>
+			    <script type="text/javascript" src="js/jquery.mixitup.js"></script>
                  <script type="text/javascript" src="js/scripts.js"></script>
                  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
                 <script src="//code.jquery.com/jquery-1.10.2.js"></script>

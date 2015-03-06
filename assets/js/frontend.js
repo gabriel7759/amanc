@@ -38,6 +38,27 @@ function validateForm(form){
 	});
 	return result;
 }
+	  $('#full-width-slider .rsContent div > img').replaceWith(function(i, v){
+   		 return $('<div/>', {
+        	style: 'background-image: url('+this.src+')',	
+  	 }); 
+     });
+	 
+	 
+	 
+	 $(".image_back").each(function(){	
+		 $(this).find("div:eq(0)").addClass("cont_image");
+	 });
+	 $('#full-width-slider2 .rsContent div > img').replaceWith(function(i, v){
+   		 return $('<article/>', {
+        	style: 'background-image: url('+this.src+')',
+  	 	}) 
+     });
+	 $('#full-width-slider3 .rsContent > img').replaceWith(function(i, v){
+   		 return $('<div/>', {
+        	style: 'background-image: url('+this.src+')',	
+  	 }); 
+     });
 
 String.prototype.isEmail = function(){
 	return (this.valueOf().search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) != -1);
