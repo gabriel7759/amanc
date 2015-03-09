@@ -10,7 +10,7 @@
 			<div class="areas">
              
              	<ul class="filter-list">
-				<li class="filter active" data-filter="all">Todos</li>
+				<li class="filter " data-filter="all">Todos</li>
 				<?php foreach($data['galleries'] as $gallery): ?>
                 	<li class="filter" data-filter=".category-<?=$gallery['id']?>"><?=$gallery['title']?></li>
                     <!--li class="filter" data-filter=".category-1"><?=$gallery['title']?></li>
@@ -24,7 +24,7 @@
 			   <?php foreach($data['galleries'] as $gallery): ?>
 					<?php if(count($gallery['images'])>0): ?>
 					<?php foreach($gallery['images'] as $imagenes): ?>
-						<li class="mix category-<?=$imagenes['gallery_id']?>" >
+						<li class="mix category-<?=$imagenes['gallery_id']?>" data-myorder="<?=$imagenes['gallery_id']?>" >
 									<a href="<?=$imagenes['src_picture']?>" class="swipebox" title="<?=$imagenes['title']?>">
 										<span><i class="fa fa-eye"></i></span>
 										<img src="<?=$imagenes['src_picture']?>" alt="<?=$imagenes['title']?>">
@@ -60,12 +60,10 @@
 
 			/* Basic Gallery */
 			$( '.swipebox' ).swipebox();
-			$('.filter').click(function(){
+			/*$('.filter').click(function(){
 				$(".filter").removeClass("active");
-				var filter =$(this).data-filter();
-				alert(filter);
 				$(this).addClass("active");
-			});
+			});*/
 			
 		} )( jQuery );
 		  
