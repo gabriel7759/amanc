@@ -39,6 +39,7 @@
              </div>   
 			 <?php endif; ?>
 	    </div>
+		<?php if($data['id']== 14): ?>      
 		<div class="encuentranos">
              	<div class="inner-block">
                 	<h3>Encuéntranos</h3>
@@ -49,6 +50,7 @@
                 </div>
              	
              </div>   
+			 <?php endif; ?>      
     </div>
 </section>
   <script src="js/ios-orientationchange-fix.js"></script>
@@ -60,6 +62,8 @@
 			$( '.swipebox' ).swipebox();
 			$('.filter').click(function(){
 				$(".filter").removeClass("active");
+				var filter =$(this).data-filter();
+				alert(filter);
 				$(this).addClass("active");
 			});
 			
