@@ -51,7 +51,7 @@
 					<input type="radio" name="newwindow" value="0" <?=($data['newwindow']==1)?'':'checked="checked"'?> /> No</input>
 				</div><br />
 				<div class="field full">
-					<label><?=__('Thumbnail')?> <span class="req"></span> <span>(max JPG 540 x 500)</span></label>
+					<label><?=__('Thumbnail')?> <span class="req"></span> <span>(max JPG 673 x 586)</span></label>
 					<div class="file">
 						<div class="fileinput">
 							<input type="text" name="thumbnail_tmp" value="" disabled="disabled">

@@ -69,7 +69,7 @@
 							foreach($data['gallery'] as $gallery){ ?>
                         	
                             	<div class="file num-gal" id="num-gal-<?=$i?>"><br />
-                                    <label><?=__('Imagen')?> <span class="req">*</span> <span>(max JPG 540 x 500)</span><a href="javascript:void(0);" class="delet" data-num="num-gal-<?=$i?>">borrar</a></label>
+                                    <label><?=__('Imagen')?> <span class="req">*</span> <span>(max JPG 207 x 183)</span><a href="javascript:void(0);" class="delet" data-num="num-gal-<?=$i?>">borrar</a></label>
 									<label><?=__('Title')?></label>
 										<input type="text" name="gallery-title[]" value="<?=$gallery['title']?>" style="width:303px;" title="Selecccione el titulo"  /><br/>
 										<label><?=__('Descripción')?></label>
@@ -77,7 +77,7 @@
 										<input type="hidden" name="gallery-file[]" value="<?=$gallery['picture']?>" />
 									
                        
-					<label>Archivo <span class="req"></span>*<span>(max JPG 540 x 500)</span></label>
+					<label>Archivo <span class="req"></span>*<span>(max JPG 207 x 183)</span></label>
 						<div class="fileinput">
 							<input type="text" name="picture_tmp[]" value="<?=$gallery['picture']?>" disabled="disabled"/>
 							<div><input type="file" name="picture[]" /></div>

@@ -107,7 +107,7 @@
                             <li>
                                 <a href="#">
                                   	<div class="txt">
-                                        <strong><?=$row['title']?></strong>
+                                        <strong><?=substr($row['title'], 0, 50)?>...</strong>
                                         <span><?=$row['summary']?></span>
                                         <small><?=Timestamp::format($row['newsdate'], '%d-%m-%Y')?></small>
                                    		<sub>Leer mas</sub>  

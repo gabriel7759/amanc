@@ -28,7 +28,7 @@
 					<textarea name="summary" cols="50" rows="10"><?=$data['summary']?></textarea>
 				</div><br />
 				<div class="field full">
-					<label><?=__('Imagen')?> <span class="req">*</span> <span>(max JPG 540 x 500)</span></label>
+					<label><?=__('Imagen')?> <span class="req">*</span> <span>(max JPG 1675 x 598)</span></label>
 					<div class="file">
 						<div class="fileinput">
 							<input type="text" name="picture_tmp" value="" disabled="disabled">
