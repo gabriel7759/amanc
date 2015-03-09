@@ -50,19 +50,19 @@ class Controller_Backend_Manage_gallery extends Controller_Backend_Template {
 			'id' => $id,
 		)); 
 		if(!file_exists('assets/files/tmp/')) mkdir('assets/files/tmp/', 0777);
-			if(count($_FILES['picture']['name'])>0){
-				for ($i=0; $i<count($_FILES['picture']['name'] ); $i++){
+			
+		
+		if ($_POST)
+		{	
+			for ($i=0; $i<count($_FILES['picture']['name'] ); $i++){
+				 
+				if($_FILES['picture']['name'][$i] !=''){
 					$source = $_FILES['picture']['tmp_name'][$i];           
 					$target = "assets/files/tmp/".$_FILES['picture']['name'][$i]; 
 					move_uploaded_file($source,$target);
-					$_POST['gallery-file']=$_FILES['picture']['name']; 
+					$_POST['gallery-file'][$i]=$_FILES['picture']['name'][$i]; 
+					}
 				}
-			}
-		//var_dump($_POST); EXIT;
-		if ($_POST)
-		{	
-			
-	
 			$data  = (array) $_POST + (array) $data;
 			$valid = $this->model->validate($data);
 		
@@ -76,9 +76,15 @@ class Controller_Backend_Manage_gallery extends Controller_Backend_Template {
 				$data['summary']= Arr::get($data,'summary',0);
 				$data['content_id']= Arr::get($data,'content_id',0);
 				$data['status']= Arr::get($data,'status',0);
+				//$data['gallery-title']= Arr::get($data,'gallery-title',0);
+				//$data['gallery-file']= Arr::get($data,'gallery-file',0);
+				//$data['gallery-summary']= Arr::get($data,'gallery-summary',0);
 				
 				
-				
+				//var_dump($_FILES['picture']['name']); EXIT;
+			//7var_dump($_POST); EXIT;
+		//var_dump($_FILES); EXIT;
+	
 				if ($data['id'])
 				{
 					$data['id'] = $this->model->update($data, $_FILES);

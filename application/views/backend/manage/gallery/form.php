@@ -74,11 +74,12 @@
 										<input type="text" name="gallery-title[]" value="<?=$gallery['title']?>" style="width:303px;" title="Selecccione el titulo"  /><br/>
 										<label><?=__('Descripción')?></label>
 										<textarea name="gallery-summary[]" cols="50" style="width:303px;" rows="10"><?=$gallery['summary']?></textarea><br/>
+										<input type="hidden" name="gallery-file[]" value="<?=$gallery['picture']?>" />
 									
                        
 					<label>Archivo <span class="req"></span>*<span>(max JPG 540 x 500)</span></label>
 						<div class="fileinput">
-							<input type="text" name="picture_tmp[]" value="<?=$gallery['picture']?>" disabled="disabled">
+							<input type="text" name="picture_tmp[]" value="<?=$gallery['picture']?>" disabled="disabled"/>
 							<div><input type="file" name="picture[]" /></div>
 						</div>
 						<div class="fname"<?php if($gallery['picture']!=""): ?>style="display:block;"<?php endif; ?>>
