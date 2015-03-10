@@ -30,11 +30,14 @@ class Model_Tag extends Model {
 		if (ctype_digit( (string) $params['status'])) 
 		{
 			$parameters[':status'] = $params['status'];
+			$parameters['sql_xtra'] = "AND tag.status = :status";
 		}
 		
-		return DB::query(Database::SELECT, "SELECT id, title, status, is_deleted
+		return DB::query(Database::SELECT, "SELECT tag.id, tag.title, tag.status, tag.is_deleted, sys_lookup.name AS status, IF(tag.status=0, 'inactive', '') AS mode
 											FROM tag
-											WHERE is_deleted = 0 AND status = :status ORDER BY title")->parameters($parameters)->execute()->as_array();
+											LEFT JOIN 
+												sys_lookup ON sys_lookup.code = tag.status AND sys_lookup.type = 'status'
+											WHERE tag.is_deleted = 0 ".$parameters['sql_xtra']." ORDER BY tag.title")->parameters($parameters)->execute();
 	}
 	
 	public function fetch_deps($params) 
@@ -76,7 +79,7 @@ class Model_Tag extends Model {
 			->parameters(array(
 				':title'          => $data['title'],
 				':status'        => $data['status'],
-				':deleted'        => 0,
+				':is_deleted'        => 0,
 			))->execute();
 		return $id;
 	}
@@ -85,12 +88,13 @@ class Model_Tag extends Model {
 	{
 		DB::query(Database::UPDATE, "
 				UPDATE tag 
-				SET title = :title, title = :title, status = :status
+				SET title = :title, status = :status
 				WHERE id = :id
 			")
 			->parameters(array(
-				':title'          => $data['title'],
-				':status'        => $data['status'],
+				':title'     => $data['title'],
+				':status'    => $data['status'],
+				':id'        => $data['id'],
 			))
 			->execute();
 			
@@ -112,5 +116,17 @@ class Model_Tag extends Model {
 						INNER JOIN tag_content t2 ON t1.id = t2.tag_id
 						WHERE t1.is_deleted = 0 ".$sql)->parameters($parameters)->execute()->as_array();
 		return $tag;
+	}
+	
+	public function validate($data)
+	{
+		$data = (array) $data;
+		
+		$data = Validation::factory($data)
+			->rule('title', 'not_empty')
+			->rule('status', 'not_empty')
+			->rule('status', 'in_array', array(':value', array(0, 1)));
+
+		return $data;
 	}
 }
