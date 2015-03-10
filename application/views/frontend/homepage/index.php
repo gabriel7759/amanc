@@ -52,8 +52,8 @@
 						</span>
                     	<div class="descripcion">
                     		<a href="actividades/detalle/<?=$row['id']?>">
-	                    		<h3><?=$row['title']?></h3>
-	                            <p><?=$row['summary']?></p>
+	                    		<h3><?=substr($row['title'], 0, 50)?>..</h3>
+	                            <p><?=substr($row['summary'], 0, 400)?>..</p>
                     		</a>
                             <a href="actividades/detalle/<?=$row['id']?>"></a>	
 						</div>
@@ -63,7 +63,7 @@
                     	<a href="actividades/detalle/<?=$row['id']?>"><img src="assets/files/activity/<?=$row['thumbnail']?>" width="225" height="141" alt="<?=$row['title']?>" /></a>
                     	<div class="descripcion">
                     		<a href="actividades/detalle/<?=$row['id']?>">
-	                    		<h3><?=$row['title']?></h3>
+	                    		<h3><?=substr($row['title'], 0, 50)?></h3>
 	                            <span>
 	                     	   		<small><?=$row['state']?></small>
 								</span>
