@@ -6,7 +6,7 @@
 			    <h3><?=$data['title']?></h3>
                 <?=$data['content']?>       
 		    </div>
-			 <?php if($data['id']== 14): ?>      
+			 <?php  if(!empty($data['galleries'])): ?>      
 			<div class="areas">
              
              	<ul class="filter-list">

@@ -82,7 +82,7 @@ class Controller_Backend_Manage_gallery extends Controller_Backend_Template {
 				
 				
 				//var_dump($_FILES['picture']['name']); EXIT;
-			//7var_dump($_POST); EXIT;
+			//var_dump($_POST); EXIT;
 		//var_dump($_FILES); EXIT;
 	
 				if ($data['id'])

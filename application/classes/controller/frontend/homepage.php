@@ -88,17 +88,20 @@ class Controller_Frontend_Homepage extends Controller_Frontend_Template {
 			'order_by' => 'gallery.position',
 			'sort'     =>'ASC',
 			'status'   => 1,
-			'content_id' => 14,
+			'content_id' => $data['id'],
 			//'text'     => $text,
 			//'id_medico' => $id_medico,
 		))->as_array(); 
-		$i=0;
-		foreach($data['galleries'] as $gallery){
-			$images=Model::factory('Gallery')->fetch_gallery($gallery['id']);
-			if($images['gallery_id']==$gallery_id['id'])
-				$data['galleries'][$i]['images']= $images;
-			$i++;
-		} 
+		
+		if($data['galleries']){
+			$i=0;
+			foreach($data['galleries'] as $gallery){
+				$images=Model::factory('Gallery')->fetch_gallery($gallery['id']);
+				if($images['gallery_id']==$gallery_id['id'])
+					$data['galleries'][$i]['images']= $images;
+				$i++;
+			} 
+		}
 		//var_dump($data['galleries']); exit;
 		$view = View::factory('frontend/homepage/content')
 			->set('data', $data);

@@ -170,6 +170,7 @@ public function fetch_gallery($id)
 				SET
 					title = :title, 
 					summary = :summary,
+					content_id = :content_id,
 					position= :position, 
 					status = :status
 				WHERE id = :id
@@ -177,6 +178,7 @@ public function fetch_gallery($id)
 			->parameters(array(
 				':title'     => $data['title'],
 				':summary'   => $data['summary'],
+				':content_id'   => $data['content_id'],
 				':position'  => $this->_position(), 
 				':status'   => $data['status'],
 				':id'        => $data['id'],
