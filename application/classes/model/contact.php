@@ -134,7 +134,7 @@ class Model_Contact extends Model {
 			->execute();
 
 				$mailheaders = "";
-				$mailheaders .= "From: casuvi <no-reply@".$_SERVER['SERVER_NAME'].">\r\n";
+				$mailheaders .= "From: amanc <no-reply@".$_SERVER['SERVER_NAME'].">\r\n";
 				$mailheaders .= 'MIME-Version: 1.0' . "\r\n";
 				$mailheaders .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
 
@@ -156,11 +156,10 @@ p { padding-right: 55px; padding-left: 65px; padding-top: 8px; }
 <body>
 <div style="width: 800px; overflow: hidden;">
 <div style="height: 415px; width: 100%; float: left;">
-<strong>Contacto casuvi recibido:</strong>
+<strong>Contacto recibido:</strong>
 <p>
 <strong>Nombre:</strong> '.$data['contact_name'].'<br>
 <strong>Email:</strong> '.$data['contact_email'].'<br>
-<strong>Phone:</strong> '.$data['contact_phone'].'<br>
 <strong>Mensaje:</strong> '.nl2br($data['contact_message']).'
 </p>
 </div>
@@ -172,7 +171,7 @@ p { padding-right: 55px; padding-left: 65px; padding-top: 8px; }
 //			$msg = utf8_decode($msg);
 			
 			
-				$subject= "=?utf-8?b?".base64_encode("Contacto casuvi")."?=";
+				$subject= "=?utf-8?b?".base64_encode("Contacto Amanc")."?=";
 
 				mail($area['email'], $subject, $msg, $mailheaders);
 				/*if(Arr::get($data, 'sendcopy', 0)){
