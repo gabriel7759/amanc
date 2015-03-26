@@ -117,8 +117,7 @@ class Model_Contact extends Model {
 
 
 	public function send($data)
-	{
-		$data['area'] = 1;
+	{	
 		
 		list($id) = DB::query(Database::INSERT, "
 				INSERT INTO contact (name, email, phone, area_id, message, contactdate, status, is_deleted, log_id) 

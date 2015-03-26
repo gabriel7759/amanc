@@ -120,7 +120,7 @@ class Controller_Frontend_Homepage extends Controller_Frontend_Template {
 	{
 		$sent = FALSE;
 
-		if($_POST){
+		if($_POST) {
 			$sent = Model::factory('Contact')->send($_POST);
 		}
 		

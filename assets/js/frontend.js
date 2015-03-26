@@ -3,6 +3,12 @@
 $(document).ready(function(){
 
 
+	$('form.validate').on('submit', function(e){
+		if(!validateForm($(this))){
+			return false;
+		}
+	});
+
 });
 
 function validateForm(form){

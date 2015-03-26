@@ -58,19 +58,20 @@
                 <!-- Jquery 1.9.1 -->
                 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
               
-               <script class="rs-file" src="js/jquery.royalslider.min.js"></script>
+                <script class="rs-file" src="js/jquery.royalslider.min.js"></script>
 			    <script type="text/javascript" src="js/jquery.mixitup.js"></script>
-                 <script type="text/javascript" src="js/scripts.js"></script>
-                 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+                <script type="text/javascript" src="js/scripts.js"></script>
+                <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
                 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
                 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
                 <script>
                     var $j = $.noConflict(true);
-                  </script>
+                </script>
    			    <!-- syntax highlighter -->
-         <script type="text/javascript">var switchTo5x=true;</script>
-          <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-          <script type="text/javascript">stLight.options({publisher: "83be2daf-8b92-45c5-883e-398d5d870512", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+         		<script type="text/javascript">var switchTo5x=true;</script>
+          		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+          		<script type="text/javascript">stLight.options({publisher: "83be2daf-8b92-45c5-883e-398d5d870512", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+                <script type="text/javascript" src="assets/js/frontend.js"></script>
 </head>
 
 <body>
@@ -181,11 +182,13 @@ Col. Tlalpan Centro, Distrito Federal, C.P. 14000</p>
 
 						<p><a href="#">Aviso de privacidad</a> | <a href="#">Prensa</a></p>
 				    </div>
-                        <form>
-                        	<h4>Contactanos</h4>
-                            <input type="text" placeholder="nombre"/>
-                            <input type="email" placeholder="email"/>
-                            <textarea placeholder="Mensaje"></textarea>
+                        <form id="frm_contact" name="frm_contact" class="validate" action="contacto" method="post">
+                        	<input type="hidden" name="contact_phone" value=""/>
+                            <input type="hidden" name="area" value="1"/>
+                            <h4>Contáctanos</h4>
+                            <input type="text" name="contact_name" placeholder="nombre" class="required" title="Ingrese el nombre" />
+                            <input type="email" name="contact_email" placeholder="email" class="required" title="Ingrese el email" />
+                            <textarea placeholder="Mensaje" name="contact_message" class="required" title="Ingrese el mensaje"></textarea>
                             <input type="submit"  value="enviar"/>
                         </form>
                 </div>
