@@ -7,7 +7,7 @@ class Controller_Frontend_Homepage extends Controller_Frontend_Template {
 		$this->template->is_home = true;
 		
 		$view = View::factory('frontend/homepage/index')
-			->set('state', Model::factory('State')->fetch_all(array()))
+			->set('state', Model::factory('State')->fetch_all(array('status' => 1)))
 			->set('activities', Model::factory('Activity')->fetch_all(array('order_by' => 't1.id', 'sort' => 'DESC', 'offset' => 0, 'limit' => 7)))
 			->set('projects', Model::factory('Project')->fetch_all(array('order_by' => 'project.id', 'sort' => 'DESC', 'offset' => 0, 'limit' => 5)))
 			->set('news', Model::factory('News')->fetch_all(array('order_by' => 'news.newsdate', 'sort' => 'DESC', 'offset' => 0, 'limit' => 4)))
@@ -78,6 +78,14 @@ class Controller_Frontend_Homepage extends Controller_Frontend_Template {
 		$section = $this->request->param('section');
 		$page = $this->request->param('page');
 		$subpage = $this->request->param('subpage');
+		
+		//state redirect
+		$redirect = Model::factory('State')->fetch_all(array('status' => 1, 'slug' => $section));
+		
+		if($redirect[0]['slug'] !='') {
+			Request::current()->redirect('actividades/estado/'.$redirect[0]['slug']);
+		}
+		
 		
 		$data = Model::factory('Content')->fetchbyuri($section, $page, $subpage);
 		$this->template->title = " | ".$data['title'];

@@ -6,7 +6,7 @@ class Controller_Backend_Manage_gallery extends Controller_Backend_Template {
 	{
 		parent::before();
 		
-		$this->model  = new Model_Gallery;
+		$this->model  = Model::factory('gallery');
 		$this->model_content = Model::factory('content');
 	}
 	
