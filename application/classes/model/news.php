@@ -38,7 +38,7 @@ class Model_News extends Model {
 					news.thumbnail,
 					news.url,
 					news.newwindow,
-					IF(news.url='', CONCAT('/noticias/', news.slug) , news.url) as href, 
+					IF(news.url='', CONCAT('/noticias/', news.id, '/', news.slug) , news.url) as href, 
 					IF(news.newwindow=1, '_blank', '_self') as target,					
 					IF(LENGTH(news.thumbnail)>0, CONCAT('/assets/files/news/',thumbnail), '') AS src_picture,  
 					sys_lookup.name AS status,

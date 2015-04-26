@@ -30,7 +30,7 @@ class Model_Project extends Model {
 					project.thumbnail, CONCAT('/assets/files/project/', project.thumbnail, '') AS src_picture, 
 					project.url,
 					project.newwindow,
-					IF(project.url='', CONCAT('/proyectos/', project.slug) , project.url) as href, 
+					IF(project.url='', CONCAT('/proyectos/', project.id, '/', project.slug) , project.url) as href, 
 					IF(project.newwindow=1, '_blank', '_self') as target,
 					project.title as name, 
 					sys_lookup.name AS status, 
