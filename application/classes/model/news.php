@@ -29,6 +29,7 @@ class Model_News extends Model {
 		return DB::query(Database::SELECT, "
 				SELECT SQL_CALC_FOUND_ROWS 
 					news.id, 
+					news.slug,
 					news.title, 
 					news.title as name, 
 					news.newsdate, 
@@ -37,6 +38,8 @@ class Model_News extends Model {
 					news.thumbnail,
 					news.url,
 					news.newwindow,
+					IF(news.url='', CONCAT('/noticias/', news.slug) , news.url) as href, 
+					IF(news.newwindow=1, '_blank', '_self') as target,					
 					IF(LENGTH(news.thumbnail)>0, CONCAT('/assets/files/news/',thumbnail), '') AS src_picture,  
 					sys_lookup.name AS status,
 					IF(news.status=0, 'inactive', '') AS mode
@@ -69,6 +72,7 @@ class Model_News extends Model {
 		$data = DB::query(Database::SELECT, "
 				SELECT 
 					id,
+					slug,
 					title, 
 					title as name, 
 					newsdate, 
@@ -115,10 +119,11 @@ class Model_News extends Model {
 	public function insert($data)
 	{
 		list($id) = DB::query(Database::INSERT, "
-				INSERT INTO news (title, summary, content, url, newwindow, newsdate, status, is_deleted, log_id) 
-				VALUES (:title, :summary, :content, :url, :newwindow, :newsdate, :status, 0, 0)
+				INSERT INTO news (slug, title, summary, content, url, newwindow, newsdate, status, is_deleted, log_id) 
+				VALUES (:slug, :title, :summary, :content, :url, :newwindow, :newsdate, :status, 0, 0)
 			")
 			->parameters(array(
+				':slug'      => $data['slug'],
 				':title'     => $data['title'], 
 				':content'   => $data['content'], 
 				':summary'   => $data['summary'],
@@ -152,6 +157,7 @@ class Model_News extends Model {
 		DB::query(Database::UPDATE, "
 				UPDATE news
 				SET
+					slug = :slug,
 					title = :title,
 					summary = :summary,
 					content = :content,
@@ -163,6 +169,7 @@ class Model_News extends Model {
 				WHERE id = :id
 			")
 			->parameters(array(
+				':slug'       => $data['slug'],
 				':title'      => $data['title'], 
 				':content'    => $data['content'], 
 				':summary'    => $data['summary'],

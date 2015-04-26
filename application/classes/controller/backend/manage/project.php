@@ -62,6 +62,9 @@ class Controller_Backend_Manage_Project extends Controller_Backend_Template {
 			}
 			else
 			{
+				$data['slug']   = URL::title($data['title'], '-', TRUE);
+				$data['status'] = Arr::get($data, 'status', 0);				
+				
 				if ($data['id'])
 				{
 					$data['id'] = $this->model->update($data, $_FILES);
