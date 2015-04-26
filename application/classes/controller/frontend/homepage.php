@@ -8,7 +8,7 @@ class Controller_Frontend_Homepage extends Controller_Frontend_Template {
 		
 		$view = View::factory('frontend/homepage/index')
 			->set('state', Model::factory('State')->fetch_all(array('status' => 1)))
-			->set('activities', Model::factory('Activity')->fetch_all(array('order_by' => 't1.id', 'sort' => 'DESC', 'offset' => 0, 'limit' => 7)))
+			->set('activities', Model::factory('Activity')->fetch_all(array('status' => '1', 'order_by' => 't1.id', 'sort' => 'DESC', 'offset' => 0, 'limit' => 7)))
 			->set('projects', Model::factory('Project')->fetch_all(array('order_by' => 'project.id', 'sort' => 'DESC', 'offset' => 0, 'limit' => 5)))
 			->set('news', Model::factory('News')->fetch_all(array('order_by' => 'news.newsdate', 'sort' => 'DESC', 'offset' => 0, 'limit' => 4)))
 			->set('slide', Model::factory('Slide')->fetch_active())
