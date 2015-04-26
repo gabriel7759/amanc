@@ -88,7 +88,7 @@
 								<?php foreach($projects as $row): ?>
                                 <div class="rsContent">
                                     <div class="img_1">
-                                        <img src="assets/files/project/<?=$row['thumbnail']?>" />
+                                        <a href="<?=$row['href']?>" target="<?=$row['target']?>"><img src="assets/files/project/<?=$row['thumbnail']?>" /></a>
                                         <div class="infoBlock rsABlock infoBlockLeftBlack" style="color:#000;" data-rsDelay="8000"  data-fade-effect="" data-move-offset="10" data-move-effect="bottom" data-speed="200"><?=$row['title']?> </div>
                                     </div>
                                 </div>

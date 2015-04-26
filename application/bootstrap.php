@@ -156,7 +156,7 @@ Route::set('news_detils', '(noticias/<id_news>/<slug>)', array('slug' => '[a-z0-
 ));
 
 //Project details
-Route::set('project_detils', '(proyecto/<id_project>/<slug>)', array('slug' => '[a-z0-9\-]+', 'id_project' => '[0-9\-]+'))
+Route::set('project_detils', '(proyectos/<id_project>/<slug>)', array('slug' => '[a-z0-9\-]+', 'id_project' => '[0-9\-]+'))
 ->defaults(array(
 	'directory'  => 'frontend',
 	'controller' => 'project',
