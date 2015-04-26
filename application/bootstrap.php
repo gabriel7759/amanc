@@ -146,6 +146,14 @@ Route::set('homepage', '(index(/<action>))', array('action' => '[a-z0-9\-]+'))
 		'directory'  => 'frontend',
 		'controller' => 'homepage',
 	));
+	
+//News details
+Route::set('news_detils', '(noticias/<id_news>/<slug>)', array('slug' => '[a-z0-9\-]+', 'id_news' => '[0-9\-]+'))
+->defaults(array(
+	'directory'  => 'frontend',
+	'controller' => 'news',
+	'action' => 'details',
+));	
 
 Route::set('registro', 'registro')
 	->defaults(array(
