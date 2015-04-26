@@ -105,7 +105,7 @@
                         <ul>
                             <?php foreach($news as $row): ?>
                             <li>
-                                <a href="#">
+                                <a href="<?=$row['href']?>" target="<?=$row['target']?>">
                                   	<div class="txt">
                                         <strong><?=substr($row['title'], 0, 50)?>...</strong>
                                         <span><?=substr($row['summary'], 0, 150)?>..</span>
