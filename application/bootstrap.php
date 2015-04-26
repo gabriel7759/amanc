@@ -153,7 +153,15 @@ Route::set('news_detils', '(noticias/<id_news>/<slug>)', array('slug' => '[a-z0-
 	'directory'  => 'frontend',
 	'controller' => 'news',
 	'action' => 'details',
-));	
+));
+
+//Project details
+Route::set('project_detils', '(proyecto/<id_project>/<slug>)', array('slug' => '[a-z0-9\-]+', 'id_project' => '[0-9\-]+'))
+->defaults(array(
+	'directory'  => 'frontend',
+	'controller' => 'project',
+	'action' => 'details',
+));
 
 Route::set('registro', 'registro')
 	->defaults(array(
