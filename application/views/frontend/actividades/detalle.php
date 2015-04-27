@@ -39,7 +39,7 @@
                                       <div>
                                       <a href="/actividades/detalle/<?=$popular['id']?>">
                                         <span><?=$popular['state']?></span>
-										<p><?=Text::limit_chars($popular['summary'], 150, '...')?></p>
+										<p style="text-transform: none;"><?=Text::limit_chars($popular['title'], 150, '...')?></p>
                                       </a>
                                       </div> 
                                   </li>
