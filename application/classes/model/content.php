@@ -474,7 +474,7 @@ class Model_Content extends Model {
 					t1.title,
 					t1.title AS name,
 					t1.subtitle,
-					CONCAT(t2.url, '/', t1.url) as url,
+					IF(t1.link ='', CONCAT(t2.url, '/', t1.url), t1.link) as href,
 					t1.content,
 					t1.link,
 					t1.status, 

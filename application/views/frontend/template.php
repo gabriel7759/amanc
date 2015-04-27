@@ -86,24 +86,22 @@
                <div class="menu_hidden_mask">
                     <nav class="menu_hidden">
                     
-                       <ul class="first">
-                             <li><a href="#">Actividades</a></li>
-                            <li><a href="#">Noticias</a></li> 
-                            <li><a href="#">Voluntariado</a></li>
-                            <li><a href="#">Sistema AMANC</a></li>
-                            <li><a href="#">Aliados</a></li>
-                            <li><a href="#">Escuelas Amigas</a></li>
-                            <li><a href="#">Nómina con Causa</a></li>
-                            <li><a href="#"> Maratón</a></li>
-                        </ul>
+					    <?php if(count($whatwedo)): ?>
+                        <ul class="first">
+                            <?php foreach($whatwedo as $row): ?>
+                            <li><a href="<?=$row['href']?>"><?=$row['title']?></a></li>
+							<?php endforeach; ?>
+                         </ul>
+                         <?php endif; ?>
                         
-                        <ul class="second">    
-                            <li><a href="#">Modelo de acompañamiento</a></li> 
-                            <li><a  href="#">Beneficios</a></li>
-                            <li><a href="#">Campañas de Detección Oportuna</a></li>
-                            <li><a href="#">Comunidad de Supervivientes</a></li>
-                            <li><a href="#">Fomento al Empleo</a></li>
-                        </ul>
+                         <?php if(count($modelo)): ?>
+                         <ul class="second">    
+                            <li>Modelo de acompañamiento</li> 
+                            <?php foreach($modelo as $row): ?>
+                            <li><a href="<?=$row['href']?>"><?=$row['title']?></a></li>
+							<?php endforeach; ?>
+                         </ul>
+                         <?php endif; ?>
                   
                     </nav>
                	</div>
@@ -162,9 +160,6 @@
                     </ul>
                     <?php endforeach; ?>
                    <?php endif; ?>
-                	
-                
-                
                 </div>
             </div>
             <div class="contactanos">

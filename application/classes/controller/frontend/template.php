@@ -60,6 +60,8 @@ class Controller_Frontend_Template extends Controller_Template {
 			$this->template->analytics  = Model_Sys_Setting::value('google_analytics');
 			$this->template->siteurl    = "http://".$_SERVER['SERVER_NAME']."/";
 			$this->template->menu       = Model::factory('Content')->fetch_childrens(array('id_parent' => '2'))->as_array();
+			$this->template->whatwedo   = Model::factory('Content')->fetch_childrens(array('id_parent' => '1'))->as_array();
+			$this->template->modelo     = Model::factory('Content')->fetch_childrens(array('id_parent' => '3'))->as_array();
 			$this->template->sitemap    = Model::factory('Content')->fetch_menu();
 			$this->template->mobile     = $this->_mobile();
 			$this->template->action     = $this->_action;
