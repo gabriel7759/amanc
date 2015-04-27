@@ -112,7 +112,7 @@
                                <li><a href="http://www.facebook.com/amanc.mexico" target="_blank"><i class="fa fa-facebook"></i></a></li>
                                <li><a href="http://www.twitter.com/amancmexico" target="_blank"><i class="fa fa-twitter"></i></a></li>
                                <li><a href="http://www.youtube.com/amancoficial" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
-                               <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                               <li><a href="https://instagram.com/amanc_mexico/" target="_blank"><i class="fa fa-instagram"></i></a></li>
                                <li><a href="mailto:cancerinfantil@amanc.org"><i class="fa fa-envelope"></i></a></li>
                                <li><a class="search_btn" href="javascript:void(0);"><i class="fa fa-search"></i></a></li>
                                 <li><a href="">Eng</a></li>
